@@ -95,3 +95,32 @@ export async function eliminarProducto(id) {
   const res = await axios.delete(`/api/productos/${id}`);
   return res.data;
 }
+
+
+/**
+ * Elimina productos aplicando los filtros seleccionados
+ * (marca, tipo, rango de precio, etc.)
+ */
+export async function eliminarProductosFiltrados(filtros = {}) {
+  try {
+    const queryParams = new URLSearchParams();
+
+    Object.entries(filtros).forEach(([clave, valor]) => {
+      if (valor !== null && valor !== undefined && valor !== "") {
+        queryParams.append(clave, valor);
+      }
+    });
+
+    const response = await axios.delete(
+      `/api/productos/filtrar?${queryParams.toString()}`
+    );
+
+    return response.data;
+
+  } catch (error) {
+    console.error("Error al eliminar productos filtrados:", error);
+
+    // Mensaje más claro para depuración
+    throw new Error("No se pudieron eliminar los productos filtrados");
+  }
+}
