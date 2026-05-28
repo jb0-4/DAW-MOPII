@@ -220,43 +220,156 @@ const cambiarPagina = (nuevaPagina) => {
 cargarProductos()
 </script>
 
+
+
+
 <style scoped>
-/* ---- DISEÑO BÁSICO PARA GRID DE PRODUCTOS ---- */
 
-.grid {
-  display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
-  gap: 1rem;
+/* ----  ESTILOS PERSONALIZADOS DEL CATÁLOGO ---- */
+
+/* ---- TÍTULO PRINCIPAL ---- */
+h2 {
+  text-align: center;
+  color: #2c3e50;
+  margin-bottom: 25px;
+  font-size: 2rem;
+  font-family: Arial, Helvetica, sans-serif;
 }
 
-.card {
-  background: white;
-  padding: 1rem;
-  border-radius: 10px;
-  box-shadow: 0 0 5px rgba(0,0,0,0.1);
+/* ---- BUSCADOR PRINCIPAL ---- */
+.search-input {
+  width: 320px;
+  padding: 10px;
+  border-radius: 8px;
+  border: 1px solid #bbb;
+  margin-right: 10px;
+  transition: 0.2s ease;
 }
 
-.card img {
-  width: 100%;
-  height: 150px;
-  object-fit: cover;
+.search-input:focus {
+  outline: none;
+  border-color: #3b7a57;
+  box-shadow: 0 0 5px rgba(59, 122, 87, 0.4);
 }
 
+/* ---- BOTONES ---- */
+button {
+  padding: 9px 14px;
+  border: none;
+  border-radius: 8px;
+  background-color: #3b7a57;
+  color: white;
+  cursor: pointer;
+  transition: 0.2s ease;
+  font-weight: bold;
+}
+
+button:hover {
+  background-color: #2d5f44;
+  transform: scale(1.03);
+}
+
+/* ---- FILTROS ---- */
 .filtros {
-  margin-bottom: 1rem;
+  margin: 20px 0;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.5rem;
+  gap: 10px;
+  background-color: #f7f7f7;
+  padding: 15px;
+  border-radius: 10px;
+}
+
+.filtros input,
+.filtros select {
+  padding: 8px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+/* ---- GRID DE PRODUCTOS ---- */
+.grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-top: 20px;
+}
+
+/* ---- TARJETAS ---- */
+.card {
+  background: white;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.12);
+  transition: all 0.25s ease;
+  padding: 15px;
+}
+
+.card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 18px rgba(0,0,0,0.18);
+}
+
+/* ---- IMÁGENES ---- */
+.card img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 8px;
+}
+
+/* ---- TEXTO PRODUCTOS ---- */
+.card h3 {
+  margin-top: 12px;
+  color: #2c3e50;
+}
+
+.card p {
+  color: #555;
+}
+
+.card strong {
+  color: #3b7a57;
+  font-size: 1.1rem;
+}
+
+/* ---- PAGINACIÓN ---- */
+.paginacion {
+  margin-top: 25px;
+  text-align: center;
 }
 
 .paginacion button {
   margin: 0 4px;
-  padding: 0.5rem 0.8rem;
 }
 
 button.activo {
-  background-color: #4CAF50;
-  color: white;
-  font-weight: bold;
+  background-color: #1f5136;
 }
+
+/* ---- INFORMACIÓN EXTRA ---- */
+p[v-if] {
+  margin-top: 20px;
+  text-align: center;
+  font-weight: bold;
+  color: #444;
+}
+
+/* ---- RESPONSIVE ---- */
+@media (max-width: 768px) {
+
+  .search-input {
+    width: 100%;
+    margin-bottom: 10px;
+  }
+
+  .filtros {
+    flex-direction: column;
+  }
+
+  .grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 </style>

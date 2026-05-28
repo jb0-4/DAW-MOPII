@@ -1,3 +1,7 @@
+-- Configuración UTF-8 para soportar caracteres especiales
+SET NAMES utf8mb4;
+SET CHARACTER SET utf8mb4;
+
 CREATE TABLE productos (
     id INT AUTO_INCREMENT PRIMARY KEY,
     nombre VARCHAR(100) NOT NULL,
@@ -7,7 +11,7 @@ CREATE TABLE productos (
     precio DECIMAL(10,2),
     stock INT,
     imagen VARCHAR(255)
-);
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4 COLLATE=utf8mb4_unicode_ci;
 
 INSERT INTO productos (nombre, tipo, marca, descripcion, precio, stock, imagen) VALUES
 ('Motosierra Stihl MS 180', 'motosierra', 'Stihl', 'Motosierra ligera para trabajos forestales básicos', 299.99, 12, 'motosierra_stihl_ms180.jpg'),
@@ -40,5 +44,13 @@ INSERT INTO productos (nombre, tipo, marca, descripcion, precio, stock, imagen) 
 ('Hacha Husqvarna X-Cut X162', 'hacha', 'Husqvarna', 'Hacha profesional de talá-intermedia', 69.00, 28, 'hacha_husqvarna_xcut_x162.jpg'),
 ('Maza Stanley FatMax FME-MFM18XB-1', 'maza', 'Stanley', 'Maza profesional para uso forestal con mango de fibra', 79.90, 20, 'maza_stanley_fatmax_fmemfm18xb1.jpg'),
 ('Casco Forestal Husqvarna Technical XR', 'accesorio', 'Husqvarna', 'Casco técnico con protección para tala intensiva', 99.90, 15, 'casco_husqvarna_technical_xr.jpg'),
-('Kit Limpieza Motosierra Stihl Premium', 'accesorio', 'Stihl', 'Kit de limpieza y mantenimiento para motosierra', 39.00, 30, 'kit_limpieza_motosierra_stihl_premium.jpg');
+('Kit Limpieza Motosierra Stihl Premium', 'accesorio', 'Stihl', 'Kit de limpieza y mantenimiento para motosierra', 39.00, 30, 'kit_limpieza_motosierra_stihl_premium.jpg'),
 
+-- Productos añadidos para ampliar catálogo
+('Linterna LED Recargable', 'accesorio', 'PowerLight', 'Linterna portátil recargable mediante USB.', 19.95, 40, 'linterna_led.jpg'),
+
+('Guantes Forestales Anticorte', 'seguridad', 'SafeCut', 'Guantes de protección para trabajos forestales.', 14.50, 65, 'guantes_anticorte.jpg'),
+
+('Bidón Combustible 5L', 'accesorio', 'FuelMax', 'Bidón homologado para transporte de combustible.', 12.99, 18, 'bidon_combustible.jpg'),
+
+('Mochila PortaHerramientas', 'accesorio', 'ToolBag', 'Mochila resistente para herramientas y accesorios.', 34.90, 11, 'mochila_herramientas.jpg');
