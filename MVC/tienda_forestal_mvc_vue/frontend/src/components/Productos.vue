@@ -55,7 +55,7 @@
         <img :src="'/img/' + p.imagen" :alt="p.nombre" />
         <h3>{{ p.nombre }}</h3>
         <p>{{ p.descripcion }}</p>
-        <strong>{{ p.precio }} €</strong><br>
+        <strong>{{ p.precio }} $</strong><br>
         <small>Stock: {{ p.stock }}</small>
       </div>
     </div>
