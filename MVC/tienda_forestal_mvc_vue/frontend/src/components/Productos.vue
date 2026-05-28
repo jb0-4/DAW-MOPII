@@ -15,14 +15,9 @@
     <!-- ===============================
          BÚSQUEDA GENERAL (campo + botón)
          =============================== -->
-    <input
-      type="text"
-      v-model="terminoBusqueda"
-      placeholder="Buscar por nombre, tipo o marca"
-      @keyup.enter="accionBuscar"
-      class="search-input"
-    />
-    <button @click="accionBuscar">Buscar</button>
+    <input type="text" v-model="terminoBusqueda" placeholder="Supervisado por Javier Bartolomé" 
+      @keyup.enter="accionFiltrar" class="search-input" />
+    <button @click="accionFiltrar">Buscar</button>
 
     <!-- ===============================
          FILTROS AVANZADOS
