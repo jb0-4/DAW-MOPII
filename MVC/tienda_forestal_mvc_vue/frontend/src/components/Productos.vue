@@ -10,7 +10,7 @@
 
 <template>
   <div>
-    <h2>Catálogo de Productos</h2>
+    <h2>Productos</h2>
 
     <!-- ===============================
          BÚSQUEDA GENERAL (campo + botón)
